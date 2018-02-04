@@ -46,4 +46,4 @@ And exporting the converted string into "decrypted_plaintext.txt".
 
 ## Snapshots 
 
-![屏幕快照 2018-02-04 下午5.24.45](/Users/Hesse/Desktop/屏幕快照 2018-02-04 下午5.24.45.png)
+![snapshot](./snapshot.png)
