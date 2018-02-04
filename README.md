@@ -1,6 +1,6 @@
-#CaesarCipher-Swift  
+# CaesarCipher-Swift  
 
-##Introduction
+## Introduction
 
 My assignment is implemented with Swift the programming language by Apple. 
 
