@@ -23,6 +23,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		86305B982026DF0200D5B21F /* plaintext.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = plaintext.txt; sourceTree = "<group>"; };
 		86EA3C3D2026172C0096F870 /* CaesarCipher-Swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "CaesarCipher-Swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86EA3C402026172C0096F870 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -58,6 +59,7 @@
 			isa = PBXGroup;
 			children = (
 				86EA3C402026172C0096F870 /* main.swift */,
+				86305B982026DF0200D5B21F /* plaintext.txt */,
 			);
 			path = "CaesarCipher-Swift";
 			sourceTree = "<group>";
