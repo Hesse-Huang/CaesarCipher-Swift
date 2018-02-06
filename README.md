@@ -48,7 +48,7 @@ Finally, we convert the processed integers back to C string, and export it into 
 
 Similarly, for the decryption process, we first read the cipher text, and then process those integers by the following steps:
 
-**minus 97 (or 65) , minus KEY, plus 26 if negative, mod 26, plus 97 (or 65) **
+**minus 97 (or 65) , minus KEY, plus 26 if negative, mod 26, plus 97 (or 65)**
 
 And exporting the converted string into "decrypted_plaintext.txt".
 
