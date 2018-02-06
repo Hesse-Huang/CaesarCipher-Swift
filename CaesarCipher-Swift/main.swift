@@ -63,11 +63,18 @@ func tryToWrite(contents: String, atPath path: String) {
 ///   - plainText: The plain text to be encrypted
 /// - Returns: Encrypted cipher text
 func encryptToCaesarCipher(key: Int8, plainText: String) -> String {
-    let plaintext = plainText.lowercased().trimmingCharacters(in: .newlines)
+    let plaintext = plainText.trimmingCharacters(in: .newlines)
     var cstr: [CChar] = plaintext.utf8CString.map {
+        // lowercased letters
         if $0 >= 97 && $0 <= 122 {
             return ($0 - 97 + key) % 26 + 97
-        } else {
+        }
+        // uppercased letters
+        else if $0 >= 65 && $0 <= 90 {
+            return ($0 - 65 + key) % 26 + 65
+        }
+        // others
+        else {
             return $0
         }
     }
@@ -84,11 +91,20 @@ func encryptToCaesarCipher(key: Int8, plainText: String) -> String {
 /// - Returns: Decrypted plain text
 func decryptFromCaesarCipher(key: Int8, cipherText: String) -> String {
     var cstr: [CChar] = cipherText.utf8CString.map {
+        // lowercased letters
         if $0 >= 97 && $0 <= 122 {
             var i = $0 - 97 - key
             if i < 0 { i += 26 }
             return i % 26 + 97
-        } else {
+        }
+        // uppercased letters
+        else if $0 >= 65 && $0 <= 90 {
+            var i = $0 - 65 - key
+            if i < 0 { i += 26 }
+            return i % 26 + 65
+        }
+        // others
+        else {
             return $0
         }
     }

@@ -63,12 +63,6 @@
             ReferencedContainer = "container:CaesarCipher-Swift.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "/Users/Hesse/Desktop/5525-Information\ Security/Assignment\ 1\ -\ Caesar\ Cipher/CaesarCipher-Swift/CaesarCipher-Swift/plaintext.txt"
-            isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
