@@ -56,4 +56,4 @@ And exporting the converted string into "decrypted_plaintext.txt".
 
 ## Snapshots 
 
-![snapshot](./snapshot.png)
+![snapshot](./Screenshot.png)
