@@ -10,12 +10,23 @@ import Foundation
 
 let args = CommandLine.arguments
 
-guard args.count == 2 else {
+guard args.count >= 2 else {
     print("Error: Please specify an input file only as the plain text to be encrypted.")
     exit(0)
 }
 
+var k: Int8 = 3
+
+if args[1] == "-k" {
+    guard args.count >= 4, let key = Int8(args[2]), key > 0 && k < 26 else {
+        print("Error: -k is given without a valid number as key")
+        exit(0)
+    }
+    k = key
+}
+
 let fileManager = FileManager.`default`
+let plainTextPath = args[args.count - 1]
 let cipherTextPath = fileManager.currentDirectoryPath + "/ciphertext.txt"
 let decryptedPlainTextPath = fileManager.currentDirectoryPath + "/decrypted_plaintext.txt"
 
@@ -113,15 +124,15 @@ func decryptFromCaesarCipher(key: Int8, cipherText: String) -> String {
 
 
 // Encrypting the plain text
-if let plainText = tryToReadContents(atPath: args[1]) {
-    let cipherText = encryptToCaesarCipher(key: 3, plainText: plainText)
+if let plainText = tryToReadContents(atPath: plainTextPath) {
+    let cipherText = encryptToCaesarCipher(key: k, plainText: plainText)
     tryToWrite(contents: cipherText, atPath: cipherTextPath)
     print("Output file: " + cipherTextPath)
 }
 
 // Decrypting the cipher text
 if let cipherText = tryToReadContents(atPath: cipherTextPath) {
-    let decryptedPlainText = decryptFromCaesarCipher(key: 3, cipherText: cipherText)
+    let decryptedPlainText = decryptFromCaesarCipher(key: k, cipherText: cipherText)
     tryToWrite(contents: decryptedPlainText, atPath: decryptedPlainTextPath)
     print("Output file: " + decryptedPlainTextPath)
 }
